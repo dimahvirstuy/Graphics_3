@@ -12,6 +12,13 @@ Returns:
 print the matrix
 */
 void print_matrix(struct matrix *m) {
+  int i; int j;
+  for (i = 0; i < *m->rows;  i++) {
+    for (j = 0; j < *m->cols;  i++) {
+      printf(" %lf ", *m->[i][j]); 
+   }
+    printf("|\n|");
+  }
 }
 
 /*-------------- void ident() --------------
@@ -39,6 +46,13 @@ Returns:
 a*b -> b
 */
 void matrix_mult(struct matrix *a, struct matrix *b) {
+  struct matrix *res; int i; int j;
+  res = new_matrix(*a->rows, *b->cols); //resulting matrix
+  for (i = 0; i < new_matrix->rows; i++) {
+    for (j = 0; j < new_matrix->cols; j++) {
+      
+    }
+  }
 }
 
 
