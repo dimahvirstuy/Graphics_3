@@ -13,9 +13,9 @@ print the matrix
 */
 void print_matrix(struct matrix *m) {
   int i; int j;
-  for (i = 0; i < *m->rows;  i++) {
-    for (j = 0; j < *m->cols;  i++) {
-      printf(" %lf ", *m->[i][j]); 
+  for (i = 0; i < m->rows;  i++) {
+    for (j = 0; j < m->cols;  i++) {
+      printf(" %lf ", m->m[i][j]); 
    }
     printf("|\n|");
   }
@@ -29,10 +29,10 @@ turns m in to an identity matrix
 */
 void ident(struct matrix *m) {
   int i; int j;
-  for (i = 0; i == *m->rows; i++) { //iterating through the matrix, if i == j make it 1, otherwise 0
-    for (j = 0; j == *m->cols; j++) {
-      if (i == j) *m->[i][j] = 1;
-      else *m->[i][j] = 0;
+  for (i = 0; i == m->rows; i++) { //iterating through the matrix, if i == j make it 1, otherwise 0
+    for (j = 0; j == m->cols; j++) {
+      if (i == j) m->m[i][j] = 1;
+      else m->m[i][j] = 0;
     }
   }
 }
@@ -45,16 +45,18 @@ Returns:
 
 a*b -> b
 */
-void matrix_mult(struct matrix *a, struct matrix *b) {
-  struct matrix *res; int i; int j;
-  res = new_matrix(*a->rows, *b->cols); //resulting matrix
-  for (i = 0; i < new_matrix->rows; i++) {
-    for (j = 0; j < new_matrix->cols; j++) {
-      
+void matrix_mult(struct matrix *a, struct matrix *b) { //the way I understood (and therefore implemented) this is that you change the b matrix to  the result
+  struct matrix *res; int i; int j; int k;
+  res = new_matrix(b->rows, b->cols); //resulting matrix
+  res = b;
+  for (i = 0; i < b->rows; i++) {
+    for (j = 0; j < b->cols; j++) {
+      for (k = 0; k < res->cols; k++) {
+	b->m[i][j] += a->m[i][j] * res->m[i][k];
+      }
     }
   }
 }
-
 
 
 /*===============================================
