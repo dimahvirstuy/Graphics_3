@@ -14,7 +14,7 @@ print the matrix
 void print_matrix(struct matrix *m) {
   int i; int j;
   for (i = 0; i < m->rows;  i++) {
-    for (j = 0; j < m->cols;  i++) {
+    for (j = 0; j < m->cols;  j++) {
       printf(" %lf ", m->m[i][j]); 
    }
     printf("|\n|");
@@ -29,8 +29,8 @@ turns m in to an identity matrix
 */
 void ident(struct matrix *m) {
   int i; int j;
-  for (i = 0; i == m->rows; i++) { //iterating through the matrix, if i == j make it 1, otherwise 0
-    for (j = 0; j == m->cols; j++) {
+  for (i = 0; i < m->rows; i++) { //iterating through the matrix, if i == j make it 1, otherwise 0
+    for (j = 0; j < m->cols; j++) {
       if (i == j) m->m[i][j] = 1;
       else m->m[i][j] = 0;
     }
