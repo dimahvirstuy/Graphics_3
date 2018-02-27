@@ -21,15 +21,15 @@ int main() {
   n->lastcol=3;
   
 
-  printf("\ntesting ident(m)\n");
+  printf("ident test\n");
   ident(m);
   print_matrix(m);
 
-  n->m[0][0]=4;
-  n->m[0][1]=37;
-  n->m[3][2]=9;
-  n->m[2][2]=10;
-  printf("\nmatrix with values\n");
+  n->m[0][0]=3;
+  n->m[0][1]=7;
+  n->m[3][2]=14;
+  n->m[2][2]=12;
+  printf("\nprinting filled matrix\n");
   print_matrix(n);
 
   printf("\ntesting matrix_mult with identity matrix\nbefore:\n");

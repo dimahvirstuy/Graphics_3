@@ -47,12 +47,12 @@ a*b -> b
 */
 void matrix_mult(struct matrix *a, struct matrix *b) { //the way I understood (and therefore implemented) this is that you change the b matrix to  the result
   struct matrix *res; int i; int j; int k;
-  res = new_matrix(b->rows, b->cols); //resulting matrix
+  res = new_matrix(b->rows, b->cols); //copy of matrix b
   res = b;
-  for (i = 0; i < b->rows; i++) {
-    for (j = 0; j < b->cols; j++) {
-      for (k = 0; k < res->cols; k++) {
-	b->m[i][j] += a->m[i][j] * res->m[i][k];
+  for (i = 0; i < b->cols; i++) {
+    for (j = 0; j < b->rows; j++) {
+      for (k = 0; k < res->rows; k++) {
+	b->m[j][i] += a->m[i][k] * res->m[k][i];
       }
     }
   }
