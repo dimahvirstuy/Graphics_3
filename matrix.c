@@ -13,6 +13,7 @@ print the matrix
 */
 void print_matrix(struct matrix *m) {
   int i; int j;
+  printf("|");
   for (i = 0; i < m->rows;  i++) {
     for (j = 0; j < m->cols;  j++) {
       printf(" %lf ", m->m[i][j]); 
