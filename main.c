@@ -56,43 +56,32 @@ int main() {
 
   edges = new_matrix(4, 4);
 
-  printf("testing add_edge, and implicitly add_point\n");
-  add_edge(edges,0,350,0,50,400,0);
-  add_edge(edges,50,400,0,100,350,0);
-  add_edge(edges,0,350,0,100,350,0);
-
-  add_edge(edges,100,400,0,150,350,0);
-  add_edge(edges,150,350,0,200,400,0);
+  printf("adding edges and points\n");
+  add_edge(edges,100,400,0,100,300,0);
+  add_edge(edges,0,200,0,100,300,0);
+  add_edge(edges,0,50,0,10,300,0);
+  add_edge(edges,0,300,0,200,350,0);
+  add_edge(edges,150,50,0,200,0,0);
   add_edge(edges,100,400,0,200,400,0);
   print_matrix(edges);
-
-  add_edge(edges,200,350,0,250,400,0);
-  add_edge(edges,250,400,0,300,350,0);
-  add_edge(edges,200,350,0,300,350,0);
-
-  add_edge(edges,300,400,0,350,350,0);
-  add_edge(edges,350,350,0,400,400,0);
-  add_edge(edges,300,400,0,400,400,0);
-  
-  add_edge(edges,400,350,0,450,400,0);
+  add_edge(edges,20,30,0,225,440,0);
+  add_edge(edges,350,100,0,200,250,0);
+  add_edge(edges,200,450,0,400,250,0);
+  add_edge(edges,100,400,0,350,350,0);
+  add_edge(edges,200,400,0,400,400,0);
+  add_edge(edges,30,40,0,400,400,0);
+  add_edge(edges,40,350,0,450,400,0);
   add_edge(edges,450,400,0,500,350,0);
   add_edge(edges,400,350,0,500,350,0);
-
-  
-  add_edge(edges,0,300,0,140,300,0);
-  add_edge(edges,140,300,0,190,40,0);
-  add_edge(edges,0,300,0,190,40,0);
-
-  add_edge(edges,170,300,0,330,300,0);
-  add_edge(edges,330,300,0,250,20,0);
-  add_edge(edges,170,300,0,250,20,0);
-
-  add_edge(edges,500,300,0,360,300,0);
-  add_edge(edges,360,300,0,310,40,0);
-  add_edge(edges,500,300,0,310,40,0);
-
-  
-  printf("\ndrawing lines\n");
+  add_edge(edges,300,300,0,10,300,0);
+  add_edge(edges,300,300,0,0,40,0);
+  add_edge(edges,0,300,0,200,40,0);
+  add_edge(edges,2000,300,0,400,300,0);
+  add_edge(edges,300,300,0,0,20,0);
+  add_edge(edges,200,300,0,250,200,0);
+  add_edge(edges,500,300,0,300,100,0);
+  add_edge(edges,500,300,0,0,40,0);
+  add_edge(edges,0,300,0,200,40,0);
   draw_lines(edges, s, c);
   save_ppm(s,"image.ppm");
   display(s);
